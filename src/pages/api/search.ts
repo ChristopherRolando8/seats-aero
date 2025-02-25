@@ -2,8 +2,8 @@ import axios from "axios";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-const API_KEY = "pro_2jfHDqr43XXLfj7Kv2RbwwJ1TWp";
-const BASE_URL = "https://seats.aero/partnerapi";
+const API_KEY = process.env.SEATS_AERO_API_KEY;
+const BASE_URL = process.env.SEATS_AERO_URL;
 
 const SearchParamsSchema = z.object({
   origin_airport: z.string().min(1, "Origin airport is required"),
